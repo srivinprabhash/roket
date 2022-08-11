@@ -19,3 +19,6 @@ build/
 
 # Migrations Path
 database/migrations
+
+# Roket Config
+roket.yaml
