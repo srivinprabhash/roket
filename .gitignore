@@ -16,3 +16,6 @@
 
 # Builds dir
 build/
+
+# Migrations Path
+database/migrations
