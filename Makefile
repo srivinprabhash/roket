@@ -3,6 +3,8 @@ default: run
 run:
 	go run main.go
 
+clean:
+	@rm -rf build/
+
 build:
-	rm -rf build/rocket
-	go build -o build/rocket -ldflags "-s -w" main.go
+	@go build -o build/roket -ldflags "-s -w" main.go
