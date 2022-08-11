@@ -1,6 +1,5 @@
 /*
 Copyright © 2022 Srivin Prabhash
-
 */
 package cmd
 
@@ -19,6 +18,7 @@ var rootCmd = &cobra.Command{
 	Use:   "roket",
 	Short: "Roket is a simple database migration tool written in Go.",
 	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("yes")
 	},
 }
 
@@ -54,9 +54,9 @@ func initConfig() {
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err != nil {
 		// fmt.Fprintln(os.Stderr, "Using config file:", viper.ConfigFileUsed())
-		fmt.Println(`
-No roket.yaml file found in current directory. Initialize 
-roket by running 'roket init'
- `)
+		// 		fmt.Println(`
+		// No roket.yaml file found in current directory. Initialize
+		// roket by running 'roket init'
+		//  `)
 	}
 }
