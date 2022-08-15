@@ -93,8 +93,8 @@ path will be used. (database/migrations)
 		// Check if roket.yaml already exist
 		if !isForced {
 
-			_, err := os.Stat("roket.yaml")
-			if !os.IsExist(err) {
+			file, _ := os.Stat("roket.yaml")
+			if file != nil {
 
 				prompt := promptui.Select{
 					Label: "roket.yaml file already exists. Do you want to overwrite it ?",
@@ -119,10 +119,17 @@ path will be used. (database/migrations)
 
 		}
 
+		_, err3 := initRoket(path)
+		if err3 != nil {
+			fmt.Println(err)
+			return
+		}
+		fmt.Println("Created roket.yaml. Edit and change it to match your settings")
+
 	},
 }
 
-func initRoket(path string, args []string) (*RoketYaml, error) {
+func initRoket(path string) (*RoketYaml, error) {
 
 	// Create roket.yaml
 	config := RoketYaml{
@@ -142,6 +149,7 @@ func initRoket(path string, args []string) (*RoketYaml, error) {
 	yamlFile, err := yaml.Marshal(&config)
 	if err != nil {
 		log.Fatalln(err)
+		return nil, err
 	}
 
 	// Writing roket.yaml
