@@ -12,7 +12,6 @@ import (
 	"strings"
 
 	"github.com/go-sql-driver/mysql"
-	_ "github.com/go-sql-driver/mysql"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"github.com/srivinprabhash/roket/connections"
