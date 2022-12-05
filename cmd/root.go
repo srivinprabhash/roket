@@ -54,9 +54,9 @@ func initConfig() {
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err != nil {
 		// fmt.Fprintln(os.Stderr, "Using config file:", viper.ConfigFileUsed())
-		// 		fmt.Println(`
-		// No roket.yaml file found in current directory. Initialize
-		// roket by running 'roket init'
-		//  `)
+		fmt.Println(`
+		No roket.yaml file found in current directory. Initialize
+		roket by running 'roket init'
+		 `)
 	}
 }
